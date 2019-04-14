@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,55 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sticking_Above_Keyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xjp-5y-Ebe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADO-bH-Kpk">
+                                        <rect key="frame" x="27" y="433" width="360" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="360" id="ihb-Po-caa"/>
+                                            <constraint firstAttribute="height" constant="30" id="jOj-xH-koy"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5R-c0-l2g">
+                                        <rect key="frame" x="184" y="486" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ADO-bH-Kpk" firstAttribute="centerX" secondItem="xjp-5y-Ebe" secondAttribute="centerX" id="6dz-WA-QMc"/>
+                                    <constraint firstItem="M5R-c0-l2g" firstAttribute="top" secondItem="ADO-bH-Kpk" secondAttribute="bottom" constant="23" id="AJ2-2s-mA7"/>
+                                    <constraint firstItem="ADO-bH-Kpk" firstAttribute="centerY" secondItem="xjp-5y-Ebe" secondAttribute="centerY" id="YBO-3J-vkH"/>
+                                    <constraint firstItem="M5R-c0-l2g" firstAttribute="centerX" secondItem="xjp-5y-Ebe" secondAttribute="centerX" id="kZH-EI-1po"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70686935740000001" green="0.89879399650000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xjp-5y-Ebe" secondAttribute="trailing" id="HCB-jF-5ZD"/>
+                            <constraint firstItem="xjp-5y-Ebe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iRI-QM-Vga"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="xjp-5y-Ebe" secondAttribute="top" constant="44" id="tZ1-1v-7Z3"/>
+                            <constraint firstItem="xjp-5y-Ebe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="teH-NI-2qg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="myBtn" destination="M5R-c0-l2g" id="I0d-oy-gMr"/>
+                        <outlet property="myTextfield" destination="ADO-bH-Kpk" id="MLO-Of-pTQ"/>
+                        <outlet property="myTopConstraint" destination="AJ2-2s-mA7" id="foQ-UH-AVQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
         </scene>
     </scenes>
 </document>
